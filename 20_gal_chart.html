@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+	
+	<canvas id="line-chart" width="50" height="25"></canvas>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<script>
+		
+new Chart(document.getElementById("line-chart"), {
+  type: 'line',
+  data: {
+    labels: [,2,4,6,8,10,12,14,16,18,20],
+    datasets: [{ 
+        data: [0,0.02,0.05],
+        label: "Ammonia",
+        borderColor: "#3e95cd",
+        fill: false
+      }, { 
+        data: [0,0.02,0.03],
+        label: "Nitrite processing",
+        borderColor: "#8e5ea2",
+        fill: false
+      }, { 
+        data: [0,0.01,0.02],
+        label: "Nitrate Processing",
+        borderColor: "#3cba9f",
+        fill: false
+      }, { 
+        data: [0,0.01, 0.015],
+        label: "Nitrate/Nitrate plant consumption",
+        borderColor: "#e8c3b9",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: '20 Gallon Freshwater chemical levels (PPM)'
+    }
+  }
+});
+</script>
+</body>
+</html>
