@@ -1,4 +1,57 @@
 <html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+    date_Yoshi_LastFeed = new Date(2020,7,16);	
+     date_Bowser_LastFeed = new Date(2020,7,16);	
+      date_KingBoo_LastFeed = new Date(2020,7,24);
+    	
+   
+    date_nextFeed_Yoshi = new Date();
+     var daysUntilY = 14; //In Days
+	  date_nextFeed_Yoshi.setTime(date_Yoshi_LastFeed.getTime() +  (daysUntilY * 24 * 60 * 60 * 1000));
+
+	 date_nextFeed_Bowser = new Date();
+     var daysUntilB = 7; //In Days
+	  date_nextFeed_Bowser.setTime(date_Bowser_LastFeed.getTime() +  (daysUntilB * 24 * 60 * 60 * 1000));
+
+	 date_nextFeed_KingBoo = new Date();
+     var daysUntilK = 7; //In Days
+	  date_nextFeed_KingBoo.setTime(date_KingBoo_LastFeed.getTime() +  (daysUntilK * 24 * 60 * 60 * 1000));
+
+	   today = new Date();
+	  
+	 
+	 daysSinceYoshi = Math.round((today.getTime() - date_Yoshi_LastFeed.getTime()) /(24 * 60 * 60 * 1000));
+
+	  daysSinceBowser = Math.round((today.getTime() - date_Bowser_LastFeed.getTime()) /(24 * 60 * 60 * 1000));
+	  
+	   daysSinceKingBoo = Math.round((today.getTime() - date_KingBoo_LastFeed.getTime()) /(24 * 60 * 60 * 1000));
+	
+
+
+    $(".Yoshi_lastFeed_class").html(date_Yoshi_LastFeed.toDateString());
+     $(".Bowser_lastFeed_class").html(date_Bowser_LastFeed.toDateString());
+      $(".KingBoo_lastFeed_class").html(date_KingBoo_LastFeed.toDateString());
+
+    $(".Yoshi_nextFeed_class").html(date_nextFeed_Yoshi.toDateString());
+     $(".Bowser_nextFeed_class").html(date_nextFeed_Bowser.toDateString());
+      $(".KingBoo_nextFeed_class").html(date_nextFeed_KingBoo.toDateString());
+
+    $(".Yoshi_daysSince").html(daysSinceYoshi);
+     $(".Bowser_daysSince").html(daysSinceBowser);
+      $(".KingBoo_daysSince").html(daysSinceKingBoo);
+
+
+
+
+
+
+    })
+
+</script>
+</head>
 	<body>
 	<style>
 	
@@ -57,11 +110,48 @@ iframe {
     border-style:none;
 }
 		
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+  color: blue;
+}
+td {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+  
+}
+
+tr:nth-child(even) {
+  background-color: #ccccff;
+}
+tr:nth-child(odd) {
+  background-color: #dddddd;
+}
+
+
+
+
+
+
+
+
+
+
+
 	</style>
 
 	<p class ='a'>Ball Pythons</p>
 	<hr style='height:2px;border-width:0; color:black;background-color:black'>
-	<a href = "https://asharafaq02.github.io/AnimalNet/index.html" >Back to Home Page</a>
+	<a href = "/" >Back to Home Page</a>
 	
 	 <pre><p class ='c'>
 	 	We have 3 Ball Pythons. Our Yellow Pastel-Banana's name is Yoshi, and he is almost 3 feet long!
@@ -72,8 +162,47 @@ iframe {
 	2 months old! This adorable little guy is currently transitioning from live hopper-mice, to frozen-thawed weaned mice.
 	As you can see, we have a little Mario-theme going for our snakes, and we plan to purchase more snakes in the future!
 			</p></pre>
-		<h1 style="text-align: center; color: blue">Ball Python Diet Chart</h1>
-		<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTSnaESQw2kzFLSBD_QGNAQvmGLX9urunKz2ooQZUzUxcboT5mINNR9EEKzI4RgaxK4wMF8S_xl3z8J/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" ></iframe>
+
+			<h2 style= 'text-align: center; color: lime' >Ball Python Diet Table</h2>
+
+<table>
+  <tr>
+    <th>Snake</th>
+    <th>Feed Type</th>
+    <th>Last Feed Date</th>
+    <th>Next Feed Date</th>
+    <th>Days since Last Feed</th>
+    <!--th>Days Until Next Feed</th-->
+  </tr>
+  <tr>
+    <td>Yoshi</td>
+    <td>Medium Frozen Thawed Rats</td>
+    <td class = "Yoshi_lastFeed_class"></td>
+    <td class = "Yoshi_nextFeed_class"></td>
+    <td class = "Yoshi_daysSince"></td>
+    <!--td></td-->
+  </tr>
+  <tr>
+    <td>Bowser</td>
+    <td>Weaned Frozen-Thawed Rats</td>
+    <td class = "Bowser_lastFeed_class"></td>
+    <td class = "Bowser_nextFeed_class"></td>
+    <td class = "Bowser_daysSince" ></td>
+     <!--td></td-->
+  </tr>
+  <tr>
+    <td>King Boo</td>
+    <td>Large Frozen-thawed Mice</td>
+    <td class = "KingBoo_lastFeed_class"></td>
+    <td class = "KingBoo_nextFeed_class"></td>
+    <td class = "KingBoo_daysSince" ></td>
+    <!--td></td-->
+  </tr>
+
+</table>
+		<!--h1 style="text-align: center; color: blue">Ball Python Diet Chart</h1>
+		<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTSnaESQw2kzFLSBD_QGNAQvmGLX9urunKz2ooQZUzUxcboT5mINNR9EEKzI4RgaxK4wMF8S_xl3z8J/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" ></iframe-->
+
 
 		<br>
 		<br>
