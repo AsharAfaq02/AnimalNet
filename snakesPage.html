@@ -28,7 +28,27 @@ $(document).ready(function(){
 	  daysSinceBowser = Math.round((today.getTime() - date_Bowser_LastFeed.getTime()) /(24 * 60 * 60 * 1000));
 	  
 	   daysSinceKingBoo = Math.round((today.getTime() - date_KingBoo_LastFeed.getTime()) /(24 * 60 * 60 * 1000));
+
+	if (daysSinceYoshi >= daysUntilY) {
+		$('.Yoshi_nextFeed_class').attr('style','background-color: red')
+			}
+			else {
+				$('.Yoshi_nextFeed_class').attr('style','background-color: lime');
+}
+
+	if (daysSinceBowser >= daysUntilB) {
+		$('.Bowser_nextFeed_class').attr('style','background-color: red');
+			}
+				else{
+					$('.Bowser_nextFeed_class').attr('style','background-color: lime');
+}
 	
+
+if (daysSinceKingBoo >= daysUntilK) {
+	$('.KingBoo_nextFeed_class').attr('style','background-color: red');	   	}
+				else{
+					$('.KingBoo_nextFeed_class').attr('style','background-color: lime');
+}
 
 
     $(".Yoshi_lastFeed_class").html(date_Yoshi_LastFeed.toDateString());
@@ -42,8 +62,6 @@ $(document).ready(function(){
     $(".Yoshi_daysSince").html(daysSinceYoshi);
      $(".Bowser_daysSince").html(daysSinceBowser);
       $(".KingBoo_daysSince").html(daysSinceKingBoo);
-
-
 
 
 
@@ -68,34 +86,34 @@ $(document).ready(function(){
 	  }
 	  
 	  p.c {
-			  font: 15px Arial, sans-serif;
-			  font-size: 20px;
-			  font-weight: bold;
-			  color: #ABEBC6 ;
-			  }
+	  font: 15px Arial, sans-serif;
+	  font-size: 20px;
+	  font-weight: bold;
+	  color: #ABEBC6 ;
+	  }
 	  
 	  p.b {
-				font: 15px Arial, sans-serif;
-				font-size: 20px;
-				font-weight: bold;
-				text-align: left;
-				color: #ABEBC6 ;
-				}
+	  font: 15px Arial, sans-serif;
+	  font-size: 20px;
+	  font-weight: bold;
+	  text-align: left;
+	  color: #ABEBC6 ;
+	  }
 	  
 	  
 	  * { box-sizing: border-box;}
 
 		.column {
-		  float: left;
-		  width: 30%;
-		  padding: 5px;
+	    float: left;
+		width: 30%;
+		padding: 5px;
 		}
 
 		/* Clearfix (clear floats) */
 		.row::after {
-		  content:'';
-		  clear: both;
-		  display: table;
+		content:'';
+		clear: both;
+		display: table;
 		}
 		
 		iframe {
@@ -136,8 +154,8 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
   background-color: #dddddd;
 }
-
-
+h3.closeHeight {line-height:5%}
+h4.closeHeight {line-height:5%}
 
 
 
@@ -151,7 +169,7 @@ tr:nth-child(odd) {
 
 	<p class ='a'>Ball Pythons</p>
 	<hr style='height:2px;border-width:0; color:black;background-color:black'>
-	<a href = "https://asharafaq02.github.io/AnimalNet/index.html" >Back to Home Page</a>
+	<a href = "/" >Back to Home Page</a>
 	
 	 <pre><p class ='c'>
 	 	We have 3 Ball Pythons. Our Yellow Pastel-Banana's name is Yoshi, and he is almost 3 feet long!
@@ -163,15 +181,17 @@ tr:nth-child(odd) {
 	As you can see, we have a little Mario-theme going for our snakes, and we plan to purchase more snakes in the future!
 			</p></pre>
 
-			<h2 style= 'text-align: center; color: lime' >Ball Python Diet Table</h2>
+			<h2 style= 'text-align: center; color: darkGreen' ><b>Ball Python Diet Table</b></h2>
+				
 
 <table>
   <tr>
     <th>Snake</th>
     <th>Feed Type</th>
     <th>Last Feed Date</th>
-    <th>Next Feed Date</th>
+    <th>Next Expected Feed Date</th>
     <th>Days since Last Feed</th>
+    <th>Feed Schedule</th>
     <!--th>Days Until Next Feed</th-->
   </tr>
   <tr>
@@ -180,7 +200,7 @@ tr:nth-child(odd) {
     <td class = "Yoshi_lastFeed_class"></td>
     <td class = "Yoshi_nextFeed_class"></td>
     <td class = "Yoshi_daysSince"></td>
-    <!--td></td-->
+    <td> Every 14 Days</td>
   </tr>
   <tr>
     <td>Bowser</td>
@@ -188,7 +208,7 @@ tr:nth-child(odd) {
     <td class = "Bowser_lastFeed_class"></td>
     <td class = "Bowser_nextFeed_class"></td>
     <td class = "Bowser_daysSince" ></td>
-     <!--td></td-->
+    <td> Every 7 Days</td>
   </tr>
   <tr>
     <td>King Boo</td>
@@ -196,15 +216,17 @@ tr:nth-child(odd) {
     <td class = "KingBoo_lastFeed_class"></td>
     <td class = "KingBoo_nextFeed_class"></td>
     <td class = "KingBoo_daysSince" ></td>
-    <!--td></td-->
+    <td> Every 7 Days</td>
   </tr>
 
 </table>
-		<!--h1 style="text-align: center; color: blue">Ball Python Diet Chart</h1>
-		<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTSnaESQw2kzFLSBD_QGNAQvmGLX9urunKz2ooQZUzUxcboT5mINNR9EEKzI4RgaxK4wMF8S_xl3z8J/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" ></iframe-->
 
+<h3 class = 'closeHeight' style = 'text-align: left; color: darkGreen'><u>LEGEND</u></h3>
 
-		<br>
+				<h4 class = 'closeHeight' style = 'text-align: left; color: lime;'>ON SCHEDULE</h4>
+				<h4 class = 'closeHeight' style = 'text-align: left; color: red;'>OFF SCHEDULE</h4>
+		
+<ul><li><h3 style = 'text-align: left; color: Navy'>  Bowser is currently in Blue-Phase of shedding, which is why he has not yet been fed on his expected schedule.</h3></li></ul>
 		<br>
 		
 
