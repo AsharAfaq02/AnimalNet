@@ -6,6 +6,7 @@ $(document).ready(function(){
     date_Yoshi_LastFeed = new Date(2020,7,16);	
      date_Bowser_LastFeed = new Date(2020,7,16);	
       date_KingBoo_LastFeed = new Date(2020,7,24);
+       date_Koi_LastFeed = new Date(2020,7,23);
     	
    
     date_nextFeed_Yoshi = new Date();
@@ -20,6 +21,10 @@ $(document).ready(function(){
      var daysUntilK = 7; //In Days
 	  date_nextFeed_KingBoo.setTime(date_KingBoo_LastFeed.getTime() +  (daysUntilK * 24 * 60 * 60 * 1000));
 
+	  date_nextFeed_Koi = new Date();
+     var daysUntilK = 7; //In Days
+	  date_nextFeed_Koi.setTime(date_Koi_LastFeed.getTime() +  (daysUntilK * 24 * 60 * 60 * 1000));
+
 	   today = new Date();
 	  
 	 
@@ -28,6 +33,8 @@ $(document).ready(function(){
 	  daysSinceBowser = Math.round((today.getTime() - date_Bowser_LastFeed.getTime()) /(24 * 60 * 60 * 1000));
 	  
 	   daysSinceKingBoo = Math.round((today.getTime() - date_KingBoo_LastFeed.getTime()) /(24 * 60 * 60 * 1000));
+
+	    daysSinceKoi = Math.round((today.getTime() - date_Koi_LastFeed.getTime()) /(24 * 60 * 60 * 1000));
 
 	if (daysSinceYoshi >= daysUntilY) {
 		$('.Yoshi_nextFeed_class').attr('style','background-color: red')
@@ -50,18 +57,27 @@ if (daysSinceKingBoo >= daysUntilK) {
 					$('.KingBoo_nextFeed_class').attr('style','background-color: lime');
 }
 
+if (daysSinceKoi >= daysUntilK) {
+	$('.Koi_nextFeed_class').attr('style','background-color: red');	   	}
+				else{
+					$('.Koi_nextFeed_class').attr('style','background-color: lime');
+}
+
 
     $(".Yoshi_lastFeed_class").html(date_Yoshi_LastFeed.toDateString());
      $(".Bowser_lastFeed_class").html(date_Bowser_LastFeed.toDateString());
       $(".KingBoo_lastFeed_class").html(date_KingBoo_LastFeed.toDateString());
+       $(".Koi_lastFeed_class").html(date_Koi_LastFeed.toDateString());
 
     $(".Yoshi_nextFeed_class").html(date_nextFeed_Yoshi.toDateString());
      $(".Bowser_nextFeed_class").html(date_nextFeed_Bowser.toDateString());
       $(".KingBoo_nextFeed_class").html(date_nextFeed_KingBoo.toDateString());
+       $(".Koi_nextFeed_class").html(date_nextFeed_Koi.toDateString());
 
     $(".Yoshi_daysSince").html(daysSinceYoshi);
      $(".Bowser_daysSince").html(daysSinceBowser);
       $(".KingBoo_daysSince").html(daysSinceKingBoo);
+       $(".Koi_daysSince").html(daysSinceKoi);
 
 
 
@@ -94,7 +110,7 @@ if (daysSinceKingBoo >= daysUntilK) {
 	  
 	  p.b {
 	  font: 15px Arial, sans-serif;
-	  font-size: 20px;
+	  font-size: 15px;
 	  font-weight: bold;
 	  text-align: left;
 	  color: #ABEBC6 ;
@@ -105,7 +121,7 @@ if (daysSinceKingBoo >= daysUntilK) {
 
 		.column {
 	    float: left;
-		width: 30%;
+		
 		padding: 5px;
 		}
 
@@ -132,7 +148,7 @@ iframe {
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
- 
+  
 }
 
 th {
@@ -154,8 +170,8 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
   background-color: #dddddd;
 }
-h3.closeHeight {line-height:8%}
-
+h3.closeHeight {line-height:5%}
+h4.closeHeight {line-height:5%}
 
 
 
@@ -169,7 +185,7 @@ h3.closeHeight {line-height:8%}
 
 	<p class ='a'>Ball Pythons</p>
 	<hr style='height:2px;border-width:0; color:black;background-color:black'>
-	<a href = "https://asharafaq02.github.io/AnimalNet/index.html" >Back to Home Page</a>
+	<a href = "/" >Back to Home Page</a>
 	
 	 <pre><p class ='c'>
 	 	We have 3 Ball Pythons. Our Yellow Pastel-Banana's name is Yoshi, and he is almost 3 feet long!
@@ -218,9 +234,17 @@ h3.closeHeight {line-height:8%}
     <td class = "KingBoo_daysSince" ></td>
     <td> Every 7 Days</td>
   </tr>
+  <tr>
+    <td>Koi</td>
+    <td>Large Frozen-thawed Large Mice</td>
+    <td class = "Koi_lastFeed_class"></td>
+    <td class = "Koi_nextFeed_class"></td>
+    <td class = "Koi_daysSince" ></td>
+    <td> Every 7 Days</td>
+  </tr>
 
 </table>
-		<br>
+<br>
 <table>
 <tr>
 <td colspan = "2" style = "text-align: center">LEGEND</td>
@@ -230,26 +254,23 @@ h3.closeHeight {line-height:8%}
 </tr>
 
 </table>
-<br>
+
+		
 <ul><li><h3 style = 'text-align: left; color: Navy'>  Bowser is currently in Blue-Phase of shedding, which is why he has not yet been fed on his expected schedule.</h3></li></ul>
 		<br>
 		
 
-	<div class='row'>
-	<div class='column'>
-		  <img src='https://i.ibb.co/FDq3Gsd/IMG-0715.jpg' border ="1">
-		   		<p class ='b'>Yoshi and Bowser</p>
-		 </div> 
+	
 		   <div class='row'>
 		 <div class='column'>
 		   <img src='https://i.ibb.co/1XynMz1/IMG-0717.jpg' border ="1" >
-		  <p class ='b'>Bowser the Clown <br> Ball python</p>
+		  <p class ='b'>Bowser the Clown Ball python</p>
 		  </div> 
 
 	    <div class='row'>
 		 <div class='column'>
 		   <img src='https://i.ibb.co/02FRDzk/IMG-0716.jpg' border ="1">
-		   <p class ='b'>Yoshi the Pastel-Banana <br> Ball Python</p>
+		   <p class ='b'>Yoshi the Pastel-Banana Ball Python</p>
 		 </div> 
 	  
 	   <div class='row'>
@@ -257,6 +278,13 @@ h3.closeHeight {line-height:8%}
 	     	<img src="https://i.ibb.co/tDL08tP/IMG-7504.jpg" border ="1">
 	     	<p class ='b'>King Boo the Mojave Lesser <br> Ball Python (Blue Eyed Leucistic)</p>
 	   </div> 
+
+	   </div> 
+		   <div class='row'>
+		 <div class='column'>
+		   <img src="https://i.ibb.co/LSnT0vn/IMG-1279.jpg" border ="1" >
+		  <p class ='b'>Koi the Karma Ball<br> Python (Blue Eyed Leucistic)</p>
+		  </div> 
 	   </body>
 	 
 	</html>
