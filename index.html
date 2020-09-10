@@ -1,308 +1,236 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<html> 
-    <head> 
-	  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
-        </head> 
-        <pre>
-          
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-        </pre>
-        <div class="preloader">
-    <div class="preloader__ring">
-        <div class="preloader__sector">A</div>
-        <div class="preloader__sector">n</div>
-        <div class="preloader__sector">i</div>
-        <div class="preloader__sector">m</div>
-        <div class="preloader__sector">a</div>
-        <div class="preloader__sector">l</div>
-        <div class="preloader__sector">N</div>
-        <div class="preloader__sector">e</div>
-        <div class="preloader__sector">t</div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-    </div>
-    <div class="preloader__ring">
-        <div class="preloader__sector">A</div>
-        <div class="preloader__sector">n</div>
-        <div class="preloader__sector">i</div>
-        <div class="preloader__sector">m</div>
-        <div class="preloader__sector">a</div>
-        <div class="preloader__sector">l</div>
-        <div class="preloader__sector">N</div>
-        <div class="preloader__sector">e</div>
-        <div class="preloader__sector">t</div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-        <div class="preloader__sector"></div>
-    </div>
-</div>
-
-<br>
-
-<body>
-  
-
-<style>
- 
-
-:root {
-  font-size: calc(16px + (24 - 16)*(100vw - 320px)/ (1280 - 320));
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+   </head>
+   <style> 
+      
+html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
 }
 
+body {
+      font-family: "Helvetica Neue",sans-serif;
+      font-weight: lighter;
 
-
-.preloader {
-  animation: tiltSpin 8s linear infinite;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  width: 1em;
-  height: 11em;
-  color: orange;
-}
-.preloader, .preloader__ring {
-  transform-style: preserve-3d;
-}
-.preloader__ring {
-  animation-name: spin;
-  animation-duration: 4s;
-  animation-timing-function: inherit;
-  animation-iteration-count: inherit;
-  font-size: 2em;
-  position: relative;
-  height: 3rem;
-  width: 1.5rem;
-}
-.preloader__ring:nth-child(even) {
-  animation-direction: reverse;
-}
-.preloader__sector {
-  font-weight: 600;
-  position: absolute;
-  top: 0;
-  left: 0;
-  text-align: center;
-  text-transform: uppercase;
-  transform: translateZ(7rem);
-}
-.preloader__sector, .preloader__sector:empty:before {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-}
-.preloader__sector:empty:before {
-  background: linear-gradient(transparent 45%, currentColor 45% 55%, transparent 55%);
-  content: "";
-}
-.preloader__sector:nth-child(2) {
-  transform: rotateY(12deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(3) {
-  transform: rotateY(24deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(4) {
-  transform: rotateY(36deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(5) {
-  transform: rotateY(48deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(6) {
-  transform: rotateY(60deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(7) {
-  transform: rotateY(72deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(8) {
-  transform: rotateY(84deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(9) {
-  transform: rotateY(96deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(10) {
-  transform: rotateY(108deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(11) {
-  transform: rotateY(120deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(12) {
-  transform: rotateY(132deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(13) {
-  transform: rotateY(144deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(14) {
-  transform: rotateY(156deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(15) {
-  transform: rotateY(168deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(16) {
-  transform: rotateY(180deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(17) {
-  transform: rotateY(192deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(18) {
-  transform: rotateY(204deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(19) {
-  transform: rotateY(216deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(20) {
-  transform: rotateY(228deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(21) {
-  transform: rotateY(240deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(22) {
-  transform: rotateY(252deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(23) {
-  transform: rotateY(264deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(24) {
-  transform: rotateY(276deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(25) {
-  transform: rotateY(288deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(26) {
-  transform: rotateY(300deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(27) {
-  transform: rotateY(312deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(28) {
-  transform: rotateY(324deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(29) {
-  transform: rotateY(336deg) translateZ(7rem);
-}
-.preloader__sector:nth-child(30) {
-  transform: rotateY(348deg) translateZ(7rem);
 }
 
-/* Animations */
-@keyframes tiltSpin {
-  from {
-    transform: rotateY(0) rotateX(30deg);
-  }
-  to {
-    transform: rotateY(1turn) rotateX(30deg);
-  }
+header {
+      width: 100%;
+      height: 100vh;
+      
+
 }
-@keyframes spin {
-  from {
-    transform: rotateY(0);
-  }
-  to {
-    transform: rotateY(1turn);
-  }
+html{
+   background-color: black;
+   background-image: url(indexBack.jpg);
+   background-size: 100%;
+   background-repeat: no-repeat;
+
 }
+
+.content {
+      width: 100%;
+      margin: 4em auto;
+      font-size: 20px;
+      line-height: 10px;
+      text-align: center;
+      color: yellow;
+      font-weight: medium;
+
+}
+.content1 {
+      width: 100%;
+      margin: 4em auto;
+      font-size: 20px;
+      line-height: normal;
+      margin-left: 30px;
+      color: white;
+      font-weight: 2;
+
+
+}
+
+.logo {
+      line-height: 60px;
+      position: fixed;
+      float: left;
+      margin: 16px 46px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+      letter-spacing: 2px;
+}
+
+nav {
+      position: fixed;
+      width: 100%;
+      line-height: 60px;
+}
+
+nav ul {
+      line-height: 60px;
+      list-style: none;
+      background: rgba(0, 0, 0, 0);
+      overflow: hidden;
+      color: #fff;
+      padding: 0;
+      text-align: right;
+      margin: 0;
+      padding-right: 40px;
+      transition: 1s;
+}
+
+nav.black ul {
+      background: #000;
+}
+
+nav ul li {
+      display: inline-block;
+      padding:16px 40px;;
+}
+
+nav ul li a {
+      text-decoration: none;
+      color: green;
+      font-weight: medium;
+      font-size: 30px;
+}
+
+.menu-icon {
+      line-height: 60px;
+      width: 100%;
+      background: #000;
+      text-align: right;
+      box-sizing: border-box;
+      padding: 15px 24px;
+      cursor: pointer;
+      color: #fff;
+      display: none;
+
+}
+
+@media(max-width: 786px) {
+
+      .logo {
+            position: fixed;
+            top: 0;
+            margin-top: 16px;
+      }
+
+      nav ul {
+            max-height: 0px;
+            background: #000;
+      }
+
+      nav.black ul {
+            background: #000;
+      }
+
+      .showing {
+            max-height: 34em;
+      }
+
+      nav ul li {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 24px;
+            text-align: center;
+      }
+
+      .menu-icon {
+            display: block;
+
+      }
 
 
 
-p.a {
-  font: 15px Arial, sans-serif;
-  font-size: 40px;
-  font-weight: bold;
-  text-align: center;
-  
+
 }
-	p.b {
-  font: 15px Arial, sans-serif;
-  font-style: italic;
-  font-size: 15px;
-  text-align: right;
-}
-
-
-p.c {
-  font: 15px Arial, sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  color: orange;
-}
-
-p.d {
-  font: 15px Arial, sans-serif;
-  font-size: 33px;
-  font-weight: bold;
-  text-align: left;
-  color: orange;
-}
-
-p.e{
-		font: 15px Arial, sans-serif
-		font-size: 25px
-		font-weight: bold
-		color:navy
-		}
-
-body {background-color: green;}
- 
-
 </style>
+<script>
 
-  <div style = 'text-align: center'>
-  <img src="https://i.ibb.co/s19xzwx/IMG-1022.jpg" alt= "IMG_1022" border="1">
-  <img src='https://i.ibb.co/RN4yvKZ/IMG-0628.jpg' alt='IMG_0628' border='1'>
-  <img src='https://i.ibb.co/x1T06Z2/IMG-0754.jpg' alt='IMG_0754' border='1'>
-  <img src='https://i.ibb.co/HVjzfTJ/IMG-0626.jpg' alt='IMG_0626' border='1'>
-  <img src="https://i.ibb.co/RDddjQC/IMG-7504.jpg" alt="IMG_7504" border ="1">
-	 
-  </div>
-<pre><p class = 'c'> Online blog for exotic animal keeping <br> Current animals include Freshwater Aquarium fish and Ball Pythons</p></pre>
-<hr style='height:2px;border-width:0; color:orange; background-color:orange'>
-<p class = 'b'> Property of AnimalNet Co. Produced 2020</p>
-                <br>
-<p class = 'd'> Our Animals:</p>
+   $(document).ready(function() {
 
-<a href="https://asharafaq02.github.io/AnimalNet/aquariumPage.html"><p class='e'>Aquariums and Fish</p></a>
+            $(".menu-icon").on("click", function() {
+                  $("nav ul").toggleClass("showing");
 
-<a href= "https://asharafaq02.github.io/AnimalNet/snakesPage.html"></p>
-<p class='e'>Snakes</p></a>
 
-</body>
+            });
+      });
+
+      // Scrolling Effect
+
+      $(window).on("scroll", function() {
+            if($(window).scrollTop()) {
+                  $('nav').addClass('black');
+            }
+
+            else {
+                  $('nav').removeClass('black');
+            }
+
+
+            
+
+      })
+</script>
+
+
+   <body>
+
+      <div class="wrapper">
+         <header>
+            <nav>
+               <div class="menu-icon">
+                  <i class="fa fa-bars fa-2x"></i>
+               </div>
+               <div class="logo">
+                  ANIMALNET
+               </div>
+               <div class="menu">
+                  <ul>
+                     <li><a href="http://www.animalnet.website/snakesPage.html">Our Snakes</a></li>
+                     <li><a href="http://www.animalnet.website/aquariumPage.html">Our Aquariums</a></li>
+                     <li><a href="/">About Us</a></li>
+                  </ul>
+
+               </div>
+                <div class = "content">
+                  ONLINE BLOG FOR EXOTIC ANIMAL KEEPING
+               </div>
+
+              <div class = "content1" >
+                  <br>Dedicated to relaying feedback on our
+                  <br>animal-keeping at AnimalNet Co. , and
+                   <br>sharing insight on the care for these animals
+                    <br>and the certain environmental parameters we have 
+                     <br>set up for their habitats.
+                  </div>
+              
+            </nav>
+
+         </header>
+
+               </body>
+
+            
+    <desc style="color: white; font-size: 10px; font-family: Helvetica;"> Website Design and Development by AnimalNet Co.</desc>    
 
 </html>
