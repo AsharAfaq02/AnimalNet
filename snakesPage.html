@@ -191,11 +191,22 @@ tr:nth-child(odd) {
 h3.closeHeight {line-height:5%}
 h4.closeHeight {line-height:5%}
 
+	* { box-sizing: border-box;}
 
+		.column {
+		  float: left;
+		  width: 30%;
+		 padding: 5px;
+		}
 
-
-
-* {
+		/* Clearfix (clear floats) */
+		.row::after {
+		  content: '';
+		  clear: both;
+		  display: table;
+		}
+		
+		* {
   border: 0;
   box-sizing: border-box;
   margin: 0;
@@ -357,6 +368,8 @@ h4.closeHeight {line-height:5%}
     transform: rotateY(1turn);
   }
 }
+
+
 
 
 
