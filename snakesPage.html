@@ -28,13 +28,13 @@ $(document).ready(function(){
 	   today = new Date();
 	  
 	 
-	 daysSinceYoshi = Math.round((today.getTime() - date_Yoshi_LastFeed.getTime()) /(24 * 60 * 60 * 1000));
+	 daysSinceYoshi = Math.floor((today.getTime() - date_Yoshi_LastFeed.getTime()) /(24 * 60 * 60 * 1000));
 
-	  daysSinceBowser = Math.round((today.getTime() - date_Bowser_LastFeed.getTime()) /(24 * 60 * 60 * 1000));
+	  daysSinceBowser = Math.floor((today.getTime() - date_Bowser_LastFeed.getTime()) /(24 * 60 * 60 * 1000));
 	  
-	   daysSinceKingBoo = Math.round((today.getTime() - date_KingBoo_LastFeed.getTime()) /(24 * 60 * 60 * 1000));
+	   daysSinceKingBoo = Math.floor((today.getTime() - date_KingBoo_LastFeed.getTime()) /(24 * 60 * 60 * 1000));
 
-	    daysSinceKoi = Math.round((today.getTime() - date_Koi_LastFeed.getTime()) /(24 * 60 * 60 * 1000));
+	    daysSinceKoi = Math.floor((today.getTime() - date_Koi_LastFeed.getTime()) /(24 * 60 * 60 * 1000));
 
 	if (daysSinceYoshi >= daysUntilY) {
 		$('.Yoshi_nextFeed_class').attr('style','background-color: red')
