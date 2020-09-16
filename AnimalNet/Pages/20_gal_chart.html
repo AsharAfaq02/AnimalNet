@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <a href = "https://asharafaq02.github.io/AnimalNet/aquariumPage.html" style = "color: navy">Back to Aquariums</a>
+  <head>
+  <canvas id="line-chart" width="50" height="25"></canvas>
+</head>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script>
+  var ammonia = 1;
+  var nitrite = ammonia/1.6;
+  var nitrate = nitrite/1.6;
+  var plant = (ammonia/ 1.1) - nitrite + nitrate;
+new Chart(document.getElementById("line-chart"), {
+
+  type: 'line',
+  data: {
+
+    labels: [,2,4,6,8,10,12,14,16,18,20],
+    datasets: [{ 
+        data: [0,(ammonia / 100),(ammonia / 80),(ammonia / 70), (ammonia / 70),(ammonia / 70), (ammonia / 70),(ammonia / 70), (ammonia / 70)],
+        label: "Ammonia",
+        borderColor: "#3e95cd",
+        fill: false
+      }, { 
+        data: [0,(nitrite / 100),(nitrite / 80), (nitrite / 70), (nitrite / 70),(nitrite / 70), (nitrite / 70),(nitrite / 70), (nitrite / 70)],
+        label: "Nitrite processing",
+        borderColor: "#8e5ea2",
+        fill: false
+      }, { 
+        data: [0,(nitrate / 100),(nitrate / 80), (nitrate / 70), (nitrate / 70),(nitrate / 70), (nitrate / 70),(nitrate / 70), (nitrate / 70)],
+        label: "Nitrate Processing",
+        borderColor: "#3cba9f",
+        fill: false
+      }, { 
+        data: [0,(plant / 100), (plant / 80), (plant / 70), (plant / 70),(plant / 70), (plant / 70),(plant / 70), (plant / 70)],
+        label: "Nitrate/Nitrate plant consumption",
+        borderColor: "#e8c3b9",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: '20 Gallon Freshwater chemical levels (PPM Per Every 2 Days)'
+    }
+  }
+});
+</script>
+
+
+</body>
+</html>
